@@ -7,12 +7,7 @@ import com.ssafy.happyhouse.model.HouseInfoDto;
 import com.ssafy.happyhouse.model.SearchDto;
 
 public interface HouseInfoService {
-
-	List<HouseInfoDto> list();
-
-	List<HouseInfoDto> apt_search(SearchDto searchDto);
-
-//	List<HouseInfoDto> dong_search(String dong);
+	List<HouseInfoDto> list(SearchDto searchDto);
 
 	boolean create(HouseInfoDto houseInfoDto);
 
