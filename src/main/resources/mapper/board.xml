@@ -6,10 +6,19 @@
 
 	<!-- 전체 게시판 조회 -->
 	<select id="list"
+		parameterType="com.ssafy.happyhouse.model.SearchDto"
 		resultType="com.ssafy.happyhouse.model.BoardDto">
 		select bnum, title, userid, price, regdate,content
 		from
 		ssafy_board
+		<if test="word!=null or word!='' ">
+			<if test="key=='id'">
+				where userid =#{word}
+			</if>
+			<if test="key=='content' ">
+				where content like concat('%',#{word},'%')
+			</if>		
+		</if>
 		order by bnum desc
 	</select>
 

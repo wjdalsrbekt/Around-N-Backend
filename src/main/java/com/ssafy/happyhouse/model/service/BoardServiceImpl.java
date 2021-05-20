@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.SearchDto;
 import com.ssafy.happyhouse.model.mapper.BoardMapper;
 
 @Service
@@ -15,8 +16,8 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper boardMapper;
 
 	@Override
-	public List<BoardDto> list() {
-		return boardMapper.list();
+	public List<BoardDto> list(SearchDto searchDto) {
+		return boardMapper.list(searchDto);
 	}
 
 	@Override

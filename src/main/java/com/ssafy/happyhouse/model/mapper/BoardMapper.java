@@ -5,10 +5,11 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.SearchDto;
 
 @Mapper
 public interface BoardMapper {
-	List<BoardDto> list();
+	List<BoardDto> list(SearchDto searchDto);
 
 	BoardDto search(int bnum);
 

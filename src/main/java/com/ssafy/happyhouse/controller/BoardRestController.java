@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.SearchDto;
 import com.ssafy.happyhouse.model.service.BoardService;
 
 import io.swagger.annotations.ApiOperation;
@@ -35,9 +36,9 @@ public class BoardRestController {
 
 	@ApiOperation(value = "모든 게시판의 정보를 반환한다.", response = List.class)
 	@GetMapping
-	public ResponseEntity<List<BoardDto>> listBoard() {
+	public ResponseEntity<List<BoardDto>> listBoard(@RequestBody SearchDto searchDto) {
 		logger.debug("listBoard - 호출 하기");
-		return new ResponseEntity<>(boardService.list(), HttpStatus.OK);
+		return new ResponseEntity<>(boardService.list(searchDto), HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "bnum에 해당하는 게시판의 정보를 반환한다.", response = BoardDto.class)
