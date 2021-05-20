@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.UserMapper">
+
+<!-- 회원가입 -->
+
+	<insert id="join" parameterType="com.ssafy.happyhouse.model.UserDto">
+	INSERT INTO SSAFY_MEMBER(
+	USERID,USERNAME,USERPWD,EMAIL,ADDRESS,JOINDATE
+	)
+	VALUES
+	(#{userid},#{username},#{userpwd},#{email},#{address},#{joindate})
+	</insert>
+	
+	<select id="findUser" parameterType="String">
+	SELECT COUNT(*)
+	FROM SSAFY_MEMBER
+	WHERE USERID=#{userid};
+	</select>
+	
+	<select id="login" parameterType="map" resultType="com.ssafy.happyhouse.model.UserDto">
+	SELECT USERID,USERNAME,USERPWD,EMAIL,ADDRESS,JOINDATE
+	FROM SSAFY_MEMBER
+	WHERE
+	USERID=#{userid} AND
+	USERPWD=#{userpwd}
+	</select>
+	
+	<update id="userModify" parameterType="com.ssafy.happyhouse.model.UserDto">
+	UPDATE SSAFY_MEMBER
+	SET USERPWD=#{userpwd},EMAIL=#{email}
+	,ADDRESS=#{address}
+	WHERE USERID=#{userid}
+	</update>
+	
+	<delete id="userDelete" parameterType="String">
+	DELETE FROM SSAFY_MEMBER
+	WHERE USERID=#{value}
+	</delete>
+
+</mapper>
