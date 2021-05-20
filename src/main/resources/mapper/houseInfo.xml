@@ -8,23 +8,48 @@
 	<!-- 전체 집 정보 조회 -->
 	<select id="list"
 		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+		select no,dong,AptName,code,buildYear,jibun,lat,lng,img
+		from
+		houseinfo
+		order by no desc
 	</select>
 
 	<!-- AptName에 따른 집 정보 상세조회 -->
 	<select id="apt_search"
+		parameterType="map"
 		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+		select no,dong,AptName,code,buildYear,jibun,lat,lng,img
+		from
+		houseinfo
+		<if test="word!=null or word!='' ">
+			<if test="key=='dong'">
+				where dong = #{dong}
+			</if>
+			<if test="key!='dong'">
+				where AptName like concat('%',#{word},'%')
+			</if>
+		</if>
+		order by no desc
 	</select>
 
 	<!-- dong에 따른 집 정보 상세조회 -->
 	<select id="dong_search"
 		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+		select no,dong,AptName,code,buildYear,jibun,lat,lng,img
+		from
+		houseinfo
+		where dong =#{dong}
+		order by no desc
 	</select>
 
 	<!-- 집 정보 등록 -->
 	<insert id="create"
 		parameterType="com.ssafy.happyhouse.model.HouseInfoDto">
-		insert into houseinfo
-		AptName,buildYear,code,dong,img, 
+		insert into houseinfo(
+		no,dong,AptName,code,buildYear,jibun,lat,lng,img
+		) values (
+		#{no},#{dong},#{AptName},#{code},#{buildYear},#{jibun},#{lat},#{lng},#{img}
+		)
 	</insert>
 
 	<!-- 집 정보 수정 -->
@@ -32,14 +57,14 @@
 		parameterType="com.ssafy.happyhouse.model.HouseInfoDto">
 		<![CDATA[
 		update houseinfo
-		set AptName=#{AptName},
+		set dong=#{dong},
+			AptName=#{AptName},
 			buildYear=#{buildYear},
 			code=#{code},
-			dong=#{dong},
-			img=#{img},
 			jibun=#{jibun},
 			lat=#{lat},
-			lng=#{lng}
+			lng=#{lng},
+			img=#{img}
 		where no=#{no}
 		]]>
 	</update>

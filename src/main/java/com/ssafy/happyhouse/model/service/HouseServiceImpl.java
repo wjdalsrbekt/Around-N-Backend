@@ -1,12 +1,15 @@
 package com.ssafy.happyhouse.model.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.happyhouse.model.HouseInfoDto;
+import com.ssafy.happyhouse.model.SearchDto;
 import com.ssafy.happyhouse.model.mapper.HouseInfoMapper;
 
 @Service
@@ -21,14 +24,14 @@ public class HouseServiceImpl implements HouseInfoService {
 	}
 
 	@Override
-	public HouseInfoDto apt_search(String AptName) {
-		return houseInfoMapper.apt_search(AptName);
+	public List<HouseInfoDto> apt_search(SearchDto searchDto) {
+		return houseInfoMapper.apt_search(searchDto);
 	}
 
-	@Override
-	public HouseInfoDto dong_search(String dong) {
-		return houseInfoMapper.dong_search(dong);
-	}
+//	@Override
+//	public List<HouseInfoDto> dong_search(String dong) {
+//		return houseInfoMapper.dong_search(dong);
+//	}
 
 	@Override
 	public boolean create(HouseInfoDto houseInfoDto) {
