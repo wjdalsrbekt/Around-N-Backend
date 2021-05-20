@@ -1,7 +1,6 @@
 package com.ssafy.happyhouse.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,26 +34,12 @@ public class HouseInfoRestController {
 	@Autowired
 	HouseInfoService houseInfoService;
 
-	@ApiOperation(value = "모든 집 정보를 반환한다.", response = List.class)
-	@GetMapping
-	public ResponseEntity<List<HouseInfoDto>> listHouseInfo() {
+	@ApiOperation(value = "모든 집 정보 및 상세검색 한것을 반환한다.", response = List.class)
+	@PostMapping("/list")
+	public ResponseEntity<List<HouseInfoDto>> listHouseInfo(@RequestBody SearchDto searchDto) {
 		logger.debug("listHouseInfo - 호출 하기");
-		return new ResponseEntity<>(houseInfoService.list(), HttpStatus.OK);
+		return new ResponseEntity<>(houseInfoService.list(searchDto), HttpStatus.OK);
 	}
-
-	@ApiOperation(value = "AptName 혹은 dong 에 해당하는 게시판의 정보를 반환한다.", response = HouseInfoDto.class)
-	@PostMapping("/search")
-	public ResponseEntity<List<HouseInfoDto>> searchAptName(@PathVariable SearchDto searchDto) {
-		logger.debug("searchAptName - 호출하기");
-		return new ResponseEntity<>(houseInfoService.apt_search(searchDto), HttpStatus.OK);
-	}
-
-//	@ApiOperation(value = "dong에 해당하는 게시판의 정보를 반환한다.", response = HouseInfoDto.class)
-//	@GetMapping("/dong/{dong}")
-//	public ResponseEntity<List<HouseInfoDto>> searchdong(@PathVariable String dong) {
-//		logger.debug("searchdong - 호출하기");
-//		return new ResponseEntity<>(houseInfoService.dong_search(dong), HttpStatus.OK);
-//	}
 
 	@ApiOperation(value = "새로운 집 정보를 입력한다. 그리고 DB입력 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@PostMapping
