@@ -12,10 +12,10 @@
 	(#{userid},#{username},#{userpwd},#{email},#{address},#{joindate})
 	</insert>
 	
-	<select id="findUser" parameterType="String">
+	<select id="findUser" parameterType="String" resultType="int">
 	SELECT COUNT(*)
 	FROM SSAFY_MEMBER
-	WHERE USERID=#{userid};
+	WHERE USERID = #{userid}
 	</select>
 	
 	<select id="login" parameterType="map" resultType="com.ssafy.happyhouse.model.UserDto">

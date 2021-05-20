@@ -51,7 +51,7 @@ public class UserRestController {
 	}
 	
 	
-	@ApiOperation(value="유저가 입력한 아이디가 이미 DB에 저장되어있으면 'fail', 가입가능한 아이디라면 'success'문자열을 반환한다.", response = String.class)
+	@ApiOperation(value="유저가 입력한 아이디가 가입가능한 아이디라면 'success'문자열을 반환한다.", response = String.class)
 	@GetMapping("{userid}")
 	public ResponseEntity<String> findUser(@PathVariable("userid") String userid){
 		logger.debug("findUser - 호출");
