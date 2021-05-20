@@ -9,7 +9,7 @@
 		select comment_no, user_name, comment_content, comment_time, bnum
 		from ssafy_comment
 		where bnum = #{bnum}
-		order by comment_no desc
+		order by comment_time
 	</select>
 
 	<!-- 게시판 정보 등록 -->
