@@ -14,7 +14,8 @@
 		<if test="word!=null or word!='' ">
 			<if test="key=='dong'">
 				where dong = #{dong}
-			</if>				<if test="key=='AptName'">
+			</if>				
+			<if test="key=='AptName'">
 				where AptName like concat('%',#{word},'%')
 			</if>
 		</if>
