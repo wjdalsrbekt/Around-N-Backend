@@ -53,6 +53,11 @@ public class UserDto {
 	public void setJoindate(String joindate) {
 		this.joindate = joindate;
 	}
+	@Override
+	public String toString() {
+		return "UserDto [userid=" + userid + ", username=" + username + ", userpwd=" + userpwd + ", email=" + email
+				+ ", address=" + address + ", joindate=" + joindate + "]";
+	}
 	
 	
 }
