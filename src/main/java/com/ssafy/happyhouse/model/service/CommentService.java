@@ -1,8 +1,8 @@
-package com.ssafy.board.model.service;
+package com.ssafy.happyhouse.model.service;
 
 import java.util.List;
 
-import com.ssafy.board.model.CommentDto;
+import com.ssafy.happyhouse.model.CommentDto;
 
 public interface CommentService {
 	List<CommentDto> list(int bnum);

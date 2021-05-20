@@ -1,12 +1,12 @@
-package com.ssafy.board.model.service;
+package com.ssafy.happyhouse.model.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ssafy.board.model.CommentDto;
-import com.ssafy.board.model.mapper.CommentMapper;
+import com.ssafy.happyhouse.model.CommentDto;
+import com.ssafy.happyhouse.model.mapper.CommentMapper;
 
 @Service
 public class CommentServiceImpl implements CommentService {

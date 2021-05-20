@@ -1,8 +1,8 @@
-package com.ssafy.board.model.mapper;
+package com.ssafy.happyhouse.model.mapper;
 
 import java.util.List;
 
-import com.ssafy.board.model.CommentDto;
+import com.ssafy.happyhouse.model.CommentDto;
 
 public interface CommentMapper {
 	List<CommentDto> list(int bnum);

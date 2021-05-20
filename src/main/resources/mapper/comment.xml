@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.board.model.mapper.CommentMapper">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.CommentMapper">
 
 	<!-- 게시판에 해당하는 댓글 조회 -->
-	<select id="list" resultType="com.ssafy.board.model.CommentDto">
+	<select id="list" resultType="com.ssafy.happyhouse.model.CommentDto">
 		select comment_no, user_name, comment_content, comment_time, bnum
 		from ssafy_comment
 		where bnum = #{bnum}
@@ -13,7 +13,7 @@
 	</select>
 
 	<!-- 게시판 정보 등록 -->
-	<insert id="create" parameterType="com.ssafy.board.model.CommentDto">
+	<insert id="create" parameterType="com.ssafy.happyhouse.model.CommentDto">
 		insert into ssafy_comment(
 			comment_no, user_name, comment_content, comment_time, bnum
 		) values (
@@ -22,7 +22,7 @@
 	</insert>
 	
 	<!-- 게시판 정보 수정 -->
-	<update id="modify" parameterType="com.ssafy.board.model.CommentDto">
+	<update id="modify" parameterType="com.ssafy.happyhouse.model.CommentDto">
 		<![CDATA[
 		update ssafy_comment
 		set comment_content = #{comment_content}

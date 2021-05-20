@@ -1,4 +1,4 @@
-package com.ssafy.board.model.service;
+package com.ssafy.happyhouse.model.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ssafy.board.model.BoardDto;
-import com.ssafy.board.model.mapper.BoardMapper;
+import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.mapper.BoardMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {

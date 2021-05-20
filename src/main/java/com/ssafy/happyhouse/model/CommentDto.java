@@ -1,4 +1,4 @@
-package com.ssafy.board.model;
+package com.ssafy.happyhouse.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

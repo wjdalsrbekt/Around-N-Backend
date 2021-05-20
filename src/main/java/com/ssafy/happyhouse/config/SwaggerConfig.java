@@ -1,4 +1,4 @@
-package com.ssafy.board.config;
+package com.ssafy.happyhouse.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket postsApi() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("ssafyBoard").select()
-				.apis(RequestHandlerSelectors.basePackage("com.ssafy.board.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.ssafy.happyhouse.controller"))
 				.build();
 	}
 

@@ -1,4 +1,4 @@
-package com.ssafy.board.controller;
+package com.ssafy.happyhouse.controller;
 
 import java.util.List;
 
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ssafy.board.model.CommentDto;
-import com.ssafy.board.model.service.CommentService;
+import com.ssafy.happyhouse.model.CommentDto;
+import com.ssafy.happyhouse.model.service.CommentService;
 
 import io.swagger.annotations.ApiOperation;
 

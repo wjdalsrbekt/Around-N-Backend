@@ -2,33 +2,39 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.board.model.mapper.BoardMapper">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.BoardMapper">
 
 	<!-- 전체 게시판 조회 -->
-	<select id="list" resultType="com.ssafy.board.model.BoardDto">
+	<select id="list"
+		resultType="com.ssafy.happyhouse.model.BoardDto">
 		select bnum, title, userid, price, regdate,content
-		from ssafy_board
+		from
+		ssafy_board
 		order by bnum desc
 	</select>
-	
+
 	<!-- bnum에 따른 게시판 상세 조회 -->
-	<select id="search" resultType="com.ssafy.board.model.BoardDto">
+	<select id="search"
+		resultType="com.ssafy.happyhouse.model.BoardDto">
 		select bnum, title, userid, price, regdate,content
-		from ssafy_board
+		from
+		ssafy_board
 		where bnum = #{bnum}
 	</select>
 
 	<!-- 게시판 정보 등록 -->
-	<insert id="create" parameterType="com.ssafy.board.model.BoardDto">
+	<insert id="create"
+		parameterType="com.ssafy.happyhouse.model.BoardDto">
 		insert into ssafy_board(
-			bnum, title, userid, price, regdate,content
+		bnum, title, userid, price, regdate,content
 		) values (
-			#{bnum}, #{title}, #{userid}, #{price}, now(),#{content}
+		#{bnum}, #{title}, #{userid}, #{price}, now(),#{content}
 		)
 	</insert>
-	
+
 	<!-- 게시판 정보 수정 -->
-	<update id="modify" parameterType="com.ssafy.board.model.BoardDto">
+	<update id="modify"
+		parameterType="com.ssafy.happyhouse.model.BoardDto">
 		<![CDATA[
 		update ssafy_board
 		set title = #{title}, 
@@ -43,15 +49,17 @@
 	<!-- bnum에 따른 게시판 댓글 삭제 -->
 	<delete id="deleteComment" parameterType="int">
 		delete
-		from ssafy_comment
+		from
+		ssafy_comment
 		where bnum = #{bnum}
 	</delete>
-	
+
 	<!-- bnum에 따른 게시판 정보 삭제 -->
 	<delete id="delete" parameterType="int">
 		delete
 		from ssafy_board
-		where bnum = #{bnum}
+		where
+		bnum = #{bnum}
 	</delete>
 
 </mapper>
