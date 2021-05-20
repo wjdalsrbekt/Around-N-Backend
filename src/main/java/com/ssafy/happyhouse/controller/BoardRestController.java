@@ -35,8 +35,10 @@ public class BoardRestController {
 	BoardService boardService;
 
 	@ApiOperation(value = "모든 게시판의 정보를 반환한다.", response = List.class)
-	@GetMapping
+	@PostMapping("/list")
 	public ResponseEntity<List<BoardDto>> listBoard(@RequestBody SearchDto searchDto) {
+		System.out.println("들어옴: "+searchDto.getKey() );
+		System.out.println("들어옴: "+searchDto.getWord());
 		logger.debug("listBoard - 호출 하기");
 		return new ResponseEntity<>(boardService.list(searchDto), HttpStatus.OK);
 	}
