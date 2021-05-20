@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.ssafy.happyhouse.model.mapper.HouseInfoMapper">
+
+	<!-- 전체 집 정보 조회 -->
+
+	<!-- AptName에 따른 집 정보 상세조회 -->
+
+	<!-- dong에 따른 집 정보 상세조회 -->
+
+	<!-- 집 정보 등록 -->
+
+	<!-- 집 정보 수정 -->
+
+	<!-- 집 정보 삭제 -->
+
+</mapper>  

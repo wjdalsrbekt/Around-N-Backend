@@ -10,7 +10,7 @@
 		select bnum, title, userid, price, regdate,content
 		from
 		ssafy_board
-		order by bnum desc
+		order by regdate desc
 	</select>
 
 	<!-- bnum에 따른 게시판 상세 조회 -->
