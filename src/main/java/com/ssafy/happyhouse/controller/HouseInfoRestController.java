@@ -43,7 +43,7 @@ public class HouseInfoRestController {
 	}
 
 	@ApiOperation(value = "AptName 혹은 dong 에 해당하는 게시판의 정보를 반환한다.", response = HouseInfoDto.class)
-	@GetMapping("/search")
+	@PostMapping("/search")
 	public ResponseEntity<List<HouseInfoDto>> searchAptName(@PathVariable SearchDto searchDto) {
 		logger.debug("searchAptName - 호출하기");
 		return new ResponseEntity<>(houseInfoService.apt_search(searchDto), HttpStatus.OK);
