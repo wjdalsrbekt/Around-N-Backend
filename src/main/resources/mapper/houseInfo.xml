@@ -6,15 +6,50 @@
 	namespace="com.ssafy.happyhouse.model.mapper.HouseInfoMapper">
 
 	<!-- 전체 집 정보 조회 -->
+	<select id="list"
+		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+	</select>
 
 	<!-- AptName에 따른 집 정보 상세조회 -->
+	<select id="apt_search"
+		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+	</select>
 
 	<!-- dong에 따른 집 정보 상세조회 -->
+	<select id="dong_search"
+		resultType="com.ssafy.happyhouse.model.HouseInfoDto">
+	</select>
 
 	<!-- 집 정보 등록 -->
+	<insert id="create"
+		parameterType="com.ssafy.happyhouse.model.HouseInfoDto">
+		insert into houseinfo
+		AptName,buildYear,code,dong,img, 
+	</insert>
 
 	<!-- 집 정보 수정 -->
+	<update id="modify"
+		parameterType="com.ssafy.happyhouse.model.HouseInfoDto">
+		<![CDATA[
+		update houseinfo
+		set AptName=#{AptName},
+			buildYear=#{buildYear},
+			code=#{code},
+			dong=#{dong},
+			img=#{img},
+			jibun=#{jibun},
+			lat=#{lat},
+			lng=#{lng}
+		where no=#{no}
+		]]>
+	</update>
 
 	<!-- 집 정보 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete
+		from houseinfo
+		where
+		no=#{no}
+	</delete>
 
 </mapper>  
