@@ -34,6 +34,7 @@ public class TempviewRestController {
 	@PostMapping("/list")
 	public ResponseEntity<List<TempviewDto>> listTempview(@RequestBody SearchDto searchDto) {
 		logger.debug("listTempInfo - 호출하기");
-		return new ResponseEntity<>(tempviewService.list(searchDto),HttpStatus.OK);
+//		System.out.println(tempviewService.list(searchDto));
+		return new ResponseEntity<List<TempviewDto>>(tempviewService.list(searchDto),HttpStatus.OK);
 	}
 }

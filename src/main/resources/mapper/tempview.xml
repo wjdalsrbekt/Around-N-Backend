@@ -6,11 +6,11 @@
 	
 	<!--  전체 집정보 조회 -->
 	<select id="list" resultType="com.ssafy.happyhouse.model.TempviewDto">
-	select dong, aptName, code, buildYear, lat,lng,dealYear,dealMonth,dealDay,area,floor
+	select dong, aptName, dealAmount,code, buildYear, lat,lng,dealYear,dealMonth,dealDay,area,floor
 	from tempview
 	<if test="word!=null or word!='' ">
 			<if test="key=='dong'">
-				where dong = #{dong}
+				where dong = #{word}
 			</if>				
 			<if test="key=='aptName'">
 				where aptName like concat('%',#{word},'%')
