@@ -7,6 +7,8 @@ import com.ssafy.happyhouse.model.UserDto;
 public interface UserService {
 	UserDto login(Map<String,String> map);
 	
+	UserDto find(String userid);
+	
 	boolean findUser(String userid);
 	
 	boolean join(UserDto userdto);

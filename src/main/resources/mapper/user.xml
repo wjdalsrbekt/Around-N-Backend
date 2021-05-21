@@ -9,7 +9,7 @@
 	USERID,USERNAME,USERPWD,EMAIL,ADDRESS,JOINDATE
 	)
 	VALUES
-	(#{userid},#{username},#{userpwd},#{email},#{address},#{joindate})
+	(#{userid},#{username},#{userpwd},#{email},#{address},now())
 	</insert>
 	
 	<select id="findUser" parameterType="String" resultType="int">
@@ -26,10 +26,18 @@
 	USERPWD=#{userpwd}
 	</select>
 	
+	<select id="find" parameterType="String" resultType="com.ssafy.happyhouse.model.UserDto">
+	SELECT USERID,USERNAME,USERPWD,EMAIL,ADDRESS,JOINDATE
+	FROM SSAFY_MEMBER
+	WHERE
+	USERID=#{userid}
+	</select>
+	
 	<update id="userModify" parameterType="com.ssafy.happyhouse.model.UserDto">
 	UPDATE SSAFY_MEMBER
 	SET USERPWD=#{userpwd},EMAIL=#{email}
-	,ADDRESS=#{address}
+	,ADDRESS=#{address},
+	USERNAME = #{username}
 	WHERE USERID=#{userid}
 	</update>
 	

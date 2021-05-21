@@ -10,6 +10,8 @@ import com.ssafy.happyhouse.model.UserDto;
 public interface UserMapper {
 	public UserDto login(Map<String,String> map);
 	
+	public UserDto find(String userid);
+	
 	public int findUser(String userid);
 	
 	public int join(UserDto userdto);

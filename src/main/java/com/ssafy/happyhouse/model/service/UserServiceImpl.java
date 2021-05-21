@@ -43,4 +43,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findUser(userid)==0;
 	}
 
+	@Override
+	public UserDto find(String userid) {
+		return userMapper.find(userid);
+	}
+
 }

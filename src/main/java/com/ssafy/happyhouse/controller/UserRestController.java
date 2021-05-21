@@ -40,6 +40,13 @@ public class UserRestController {
 		return new ResponseEntity<UserDto>(userService.login(map),HttpStatus.OK);
 	}
 	
+	@ApiOperation(value="유저의 아이디에 맞는 정보를 가져온다.")
+	@GetMapping("{userid}")
+	public ResponseEntity<UserDto> findInfo(@PathVariable("userid") String userid){
+		logger.debug("findInfo - 호출");
+		return new ResponseEntity<UserDto>(userService.find(userid),HttpStatus.OK);
+	}
+	
 	@ApiOperation(value="유저는 회원가입을 한다. DB입력 성공여부에 따라 'success'또는 'fail'문자열을 반환한다. ", response = String.class)
 	@PostMapping("/join")
 	public ResponseEntity<String> joinUser(@RequestBody UserDto userDto){
@@ -52,7 +59,7 @@ public class UserRestController {
 	
 	
 	@ApiOperation(value="유저가 입력한 아이디가 가입가능한 아이디라면 'success'문자열을 반환한다.", response = String.class)
-	@GetMapping("{userid}")
+	@GetMapping("/find/{userid}")
 	public ResponseEntity<String> findUser(@PathVariable("userid") String userid){
 		logger.debug("findUser - 호출");
 		if(userService.findUser(userid)) {
