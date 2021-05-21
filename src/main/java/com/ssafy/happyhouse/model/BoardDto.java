@@ -15,6 +15,13 @@ public class BoardDto {
 	private int price;
 	@ApiModelProperty(value = "작성시각")
 	private String regdate;
+	
+
+	@Override
+	public String toString() {
+		return "BoardDto [bnum=" + bnum + ", title=" + title + ", userid=" + userid + ", price=" + price + ", regdate="
+				+ regdate + ", content=" + content + "]";
+	}
 
 	public String getRegdate() {
 		return regdate;

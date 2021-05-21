@@ -62,7 +62,7 @@ public class BoardRestController {
 	}
 
 	@ApiOperation(value = "bnum에 해당하는 게시판의 정보를 수정한다. 그리고 DB수정 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
-	@PutMapping("{bnum}")
+	@PutMapping
 	public ResponseEntity<String> modifyBoard(@RequestBody BoardDto boardDto) {
 		logger.debug("modifyBoard - 호출");
 		logger.debug("" + boardDto);
