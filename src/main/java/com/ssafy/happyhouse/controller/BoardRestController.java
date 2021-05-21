@@ -66,6 +66,7 @@ public class BoardRestController {
 	public ResponseEntity<String> modifyBoard(@RequestBody BoardDto boardDto) {
 		logger.debug("modifyBoard - 호출");
 		logger.debug("" + boardDto);
+//		System.out.println(boardDto);
 		if (boardService.modify(boardDto)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}
