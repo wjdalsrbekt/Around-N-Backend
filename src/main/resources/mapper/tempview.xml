@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.TempviewMapper">
+	
+	<!--  전체 집정보 조회 -->
+	<select id="list" resultType="com.ssafy.happyhouse.model.TempviewDto">
+	select dong, aptName, code, buildYear, lat,lng,dealYear,dealMonth,dealDay,area,floor
+	from tempview
+	<if test="word!=null or word!='' ">
+			<if test="key=='dong'">
+				where dong = #{dong}
+			</if>				
+			<if test="key=='aptName'">
+				where aptName like concat('%',#{word},'%')
+			</if>
+		</if>
+	order by dong
+	</select>
+</mapper>
