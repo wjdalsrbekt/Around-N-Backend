@@ -1,5 +1,6 @@
 package com.ssafy.happyhouse.model.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean create(BoardDto boardDto) {
-		return boardMapper.create(boardDto) == 1;
+	@Transactional
+	public boolean create(BoardDto boardDto) throws SQLException {
+		int tmp=boardMapper.create(boardDto);
+		if(boardDto.getFileInfos()!=null)
+			boardMapper.fileRegist(boardDto);
+		return tmp==1;
+//		return boardMapper.create(boardDto) == 1;
 	}
 
 	@Override

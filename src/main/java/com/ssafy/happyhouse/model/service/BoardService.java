@@ -1,5 +1,6 @@
 package com.ssafy.happyhouse.model.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.ssafy.happyhouse.model.BoardDto;
@@ -10,9 +11,11 @@ public interface BoardService {
 
 	BoardDto search(int bnum);
 
-	boolean create(BoardDto boardDto);
+	boolean create(BoardDto boardDto) throws SQLException;
 
 	boolean modify(BoardDto boardDto);
 
 	boolean delete(int bnum);
+	
+	
 }

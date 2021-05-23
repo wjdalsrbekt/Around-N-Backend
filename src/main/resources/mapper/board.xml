@@ -71,4 +71,19 @@
 		bnum = #{bnum}
 	</delete>
 
+	<insert id="fileRegist" parameterType="com.ssafy.happyhouse.model.BoardDto">
+	insert into file_info (bnum, savefolder, originfile, savefile)
+	values
+	<foreach collection="fileInfos" item="fileinfo" separator=" , ">
+		(#{bnum}, #{fileinfo.saveFolder}, #{fileinfo.originFile}, #{fileinfo.saveFile})
+		</foreach>
+	</insert>
+	
+		
+	<select id="fileInfoList" resultType="com.ssafy.happyhouse.model.FileInfoDto">
+		select savefolder, originfile, savefile
+		from file_info
+		where bnum = #{bnum}
+	</select>
+	
 </mapper>

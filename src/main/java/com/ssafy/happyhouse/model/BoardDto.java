@@ -1,5 +1,9 @@
 package com.ssafy.happyhouse.model;
 
+import java.util.List;
+
+import com.ssafy.happyhouse.model.FileInfoDto;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,12 +19,38 @@ public class BoardDto {
 	private int price;
 	@ApiModelProperty(value = "작성시각")
 	private String regdate;
+	@ApiModelProperty(value = "상세정보")
+	private String content;
+	@ApiModelProperty(value="파일올리기")
+	private List<FileInfoDto> fileInfos;
 	
+
+	public BoardDto() {
+	}
+
+	public List<FileInfoDto> getFileInfos() {
+		return fileInfos;
+	}
+
+	public void setFileInfos(List<FileInfoDto> fileInfos) {
+		this.fileInfos = fileInfos;
+	}
 
 	@Override
 	public String toString() {
 		return "BoardDto [bnum=" + bnum + ", title=" + title + ", userid=" + userid + ", price=" + price + ", regdate="
-				+ regdate + ", content=" + content + "]";
+				+ regdate + ", content=" + content + ", fileInfos=" + fileInfos + "]";
+	}
+
+	public BoardDto(int bnum, String title, String userid, int price, String regdate, String content,
+			List<com.ssafy.happyhouse.model.FileInfoDto> fileInfos) {
+		this.bnum = bnum;
+		this.title = title;
+		this.userid = userid;
+		this.price = price;
+		this.regdate = regdate;
+		this.content = content;
+		this.fileInfos = fileInfos;
 	}
 
 	public String getRegdate() {
@@ -30,19 +60,6 @@ public class BoardDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-
-	public BoardDto(int bnum, String title, String userid, int price, String regdate, String content) {
-		super();
-		this.bnum = bnum;
-		this.title = title;
-		this.userid = userid;
-		this.price = price;
-		this.regdate = regdate;
-		this.content = content;
-	}
-
-	@ApiModelProperty(value = "상세정보")
-	private String content;
 
 	public int getBnum() {
 		return bnum;
