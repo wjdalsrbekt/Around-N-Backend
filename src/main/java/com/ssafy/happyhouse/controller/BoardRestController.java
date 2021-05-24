@@ -143,15 +143,15 @@ public class BoardRestController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 
-	@RequestMapping(value = "/download", method = RequestMethod.GET)
-	public ModelAndView downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
+	@GetMapping("/download")
+	public ResponseEntity<ModelAndView> downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
 			@RequestParam("sfile") String sfile) {
 		Map<String, Object> fileInfo = new HashMap<String, Object>();
 		fileInfo.put("sfolder", sfolder);
 		fileInfo.put("ofile", ofile);
 		fileInfo.put("sfile", sfile);
 
-		return new ModelAndView("fileDownLoadView", "downloadFile", fileInfo);
+		return new ResponseEntity<ModelAndView>(HttpStatus.OK);
 
 	}
 }

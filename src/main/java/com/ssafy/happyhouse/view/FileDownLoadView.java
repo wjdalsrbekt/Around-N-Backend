@@ -31,7 +31,7 @@ public class FileDownLoadView extends AbstractView {
         String originalFile = (String) fileInfo.get("ofile");    // 원본 파일명(화면에 표시될 파일 이름)
         String saveFile = (String) fileInfo.get("sfile");    // 암호화된 파일명(실제 저장된 파일 이름)
         File file = new File(realPath + File.separator  + saveFolder, saveFile);
-		
+		System.out.println(originalFile);
         response.setContentType(getContentType());
         response.setContentLength((int) file.length());
         
