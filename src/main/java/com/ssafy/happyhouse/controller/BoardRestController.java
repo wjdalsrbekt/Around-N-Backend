@@ -87,7 +87,8 @@ public class BoardRestController {
 			throws IllegalStateException, IOException {
 		System.out.println("wrfiteController" + boardDto);
 		if (files != null && !files.isEmpty()) {
-			String realPath = servletContext.getRealPath("/resources/img");
+//			String realPath = servletContext.getRealPath("/resources/img");
+			String realPath = servletContext.getRealPath("/upload");
 			String today = new SimpleDateFormat("yyMMdd").format(new Date());
 			String saveFolder = realPath + File.separator + today;
 			File folder = new File(saveFolder);
