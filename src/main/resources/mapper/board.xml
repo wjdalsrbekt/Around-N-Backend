@@ -85,9 +85,9 @@
 	</insert>
 
 
-	<select id="fileInfoList"
+	<select id="fileInfoList" parameterType="int"
 		resultType="com.ssafy.happyhouse.model.FileInfoDto">
-		select savefolder, originfile, savefile
+		select bnum, savefolder, originfile, savefile
 		from file_info
 		where
 		bnum = #{bnum}
@@ -103,9 +103,9 @@
 		parameterType="com.ssafy.happyhouse.model.FileInfoDto">
 	<![CDATA[
 	update file_info
-	set savefolder = #{file_info.savefolder},
-	originfile = #{file_info.originfile},
-	savefile = #{file_info.savefile}
+	set savefolder = #{saveFolder},
+	originfile = #{originFile},
+	savefile = #{saveFile}
 	where bnum=#{bnum}
 	]]>
 	</update>

@@ -22,17 +22,17 @@ public class BoardDto {
 	@ApiModelProperty(value = "상세정보")
 	private String content;
 	@ApiModelProperty(value="파일올리기")
-	private List<FileInfoDto> fileInfos;
+	private FileInfoDto fileInfos;
 	
 
 	public BoardDto() {
 	}
 
-	public List<FileInfoDto> getFileInfos() {
+	public FileInfoDto getFileInfos() {
 		return fileInfos;
 	}
 
-	public void setFileInfos(List<FileInfoDto> fileInfos) {
+	public void setFileInfos(FileInfoDto fileInfos) {
 		this.fileInfos = fileInfos;
 	}
 
@@ -43,7 +43,8 @@ public class BoardDto {
 	}
 
 	public BoardDto(int bnum, String title, String userid, int price, String regdate, String content,
-			List<com.ssafy.happyhouse.model.FileInfoDto> fileInfos) {
+			FileInfoDto fileInfos) {
+		super();
 		this.bnum = bnum;
 		this.title = title;
 		this.userid = userid;

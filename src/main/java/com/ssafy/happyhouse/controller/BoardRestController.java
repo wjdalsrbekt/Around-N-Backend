@@ -96,7 +96,7 @@ public class BoardRestController {
 				System.out.println("####");
 				folder.mkdirs();
 			}
-			List<FileInfoDto> fileInfos = new ArrayList<FileInfoDto>();
+//			List<FileInfoDto> fileInfos = new ArrayList<FileInfoDto>();
 			FileInfoDto fileInfoDto = new FileInfoDto();
 			String originalFileName = files.getOriginalFilename();
 			if (!originalFileName.isEmpty()) {
@@ -107,8 +107,8 @@ public class BoardRestController {
 				fileInfoDto.setSaveFile(saveFileName);
 				files.transferTo(new File(folder, saveFileName));
 			}
-			fileInfos.add(fileInfoDto);
-			boardDto.setFileInfos(fileInfos);
+//			fileInfos.add(fileInfoDto);
+			boardDto.setFileInfos(fileInfoDto);
 		}
 		try {
 			boardService.create(boardDto);
@@ -150,7 +150,7 @@ public class BoardRestController {
 				System.out.println("####");
 				folder.mkdirs();
 			}
-			List<FileInfoDto> fileInfos = new ArrayList<FileInfoDto>();
+//			List<FileInfoDto> fileInfos = new ArrayList<FileInfoDto>();
 			FileInfoDto fileInfoDto = new FileInfoDto();
 			String originalFileName = files.getOriginalFilename();
 			if (!originalFileName.isEmpty()) {
@@ -161,8 +161,8 @@ public class BoardRestController {
 				fileInfoDto.setSaveFile(saveFileName);
 				files.transferTo(new File(folder, saveFileName));
 			}
-			fileInfos.add(fileInfoDto);
-			boardDto.setFileInfos(fileInfos);
+//			fileInfos.add(fileInfoDto);
+			boardDto.setFileInfos(fileInfoDto);
 		}
 		try {
 			boardService.modify(boardDto);

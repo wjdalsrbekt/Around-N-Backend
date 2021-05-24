@@ -42,8 +42,18 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public boolean modify(BoardDto boardDto) {
 		int tmp=boardMapper.modify(boardDto);
-		if(boardDto.getFileInfos()!=null)
-			boardMapper.updateFile(boardDto);
+		System.out.println(boardDto);
+		FileInfoDto temp=new FileInfoDto();
+		temp = boardMapper.fileInfoList(boardDto.getBnum());
+		System.out.println(temp);
+		if(boardDto.getFileInfos()!=null) {
+			FileInfoDto temp2 = boardDto.getFileInfos();
+            temp.setOriginFile(temp2.getOriginFile());
+            temp.setSaveFile(temp2.getSaveFile());
+            temp.setSaveFolder(temp2.getSaveFolder());
+            boardMapper.updateFile(temp);
+		}
+//			boardMapper.updateFile(boardMapper.fileInfoList(boardDto.getBnum()));
 		return tmp == 1;
 	}
 

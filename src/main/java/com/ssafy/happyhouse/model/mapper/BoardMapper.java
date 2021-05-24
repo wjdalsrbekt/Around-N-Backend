@@ -29,6 +29,6 @@ public interface BoardMapper {
 	
 	public void deleteFile(int bnum);
 	
-	public void updateFile(BoardDto boardDto);
+	public void updateFile(FileInfoDto fileInfoDto);
 	
 }
