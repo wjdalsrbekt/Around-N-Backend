@@ -41,13 +41,17 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean modify(BoardDto boardDto) {
-		return boardMapper.modify(boardDto) == 1;
+		int tmp=boardMapper.modify(boardDto);
+		if(boardDto.getFileInfos()!=null)
+			boardMapper.updateFile(boardDto.getBnum());
+		return tmp == 1;
 	}
 
 	@Override
 	@Transactional
 	public boolean delete(int bnum) {
 		boardMapper.deleteComment(bnum);
+		boardMapper.deleteFile(bnum);
 		return boardMapper.delete(bnum) == 1;
 	}
 
