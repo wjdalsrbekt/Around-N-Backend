@@ -29,7 +29,9 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	@Transactional
 	public boolean create(BoardDto boardDto) throws SQLException {
+		System.out.println(boardDto);
 		int tmp=boardMapper.create(boardDto);
+		System.out.println(boardDto);
 		if(boardDto.getFileInfos()!=null)
 			boardMapper.fileRegist(boardDto);
 		return tmp==1;

@@ -33,11 +33,11 @@
 
 	<!-- 게시판 정보 등록 -->
 	<insert id="create"
-		parameterType="com.ssafy.happyhouse.model.BoardDto">
+		parameterType="com.ssafy.happyhouse.model.BoardDto" useGeneratedKeys="true" keyProperty="bnum" keyColumn="bnum">
 		insert into ssafy_board(
-		bnum, title, userid, price, regdate,content
+		 title, userid, price, regdate,content
 		) values (
-		#{bnum}, #{title}, #{userid}, #{price}, now(),#{content}
+		 #{title}, #{userid}, #{price}, now(),#{content}
 		)
 	</insert>
 

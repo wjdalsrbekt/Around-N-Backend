@@ -79,14 +79,14 @@ public class BoardRestController {
 //		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 //	}
 
-
 /////////////////////////////////////////
-	//@RequestMapping(value = "/write", method = RequestMethod.POST)
+	// @RequestMapping(value = "/write", method = RequestMethod.POST)
 	@ApiOperation(value = "새로운 게시판 정보를 입력한다. 그리고 DB입력 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@PostMapping
-	public ResponseEntity<String> createBoard(BoardDto boardDto, @RequestParam("upfile") MultipartFile files) throws IllegalStateException, IOException
-			 {
-		if (!files.isEmpty()) {
+	public ResponseEntity<String> createBoard(BoardDto boardDto, @RequestParam(value="upfile", required = false) MultipartFile files)
+			throws IllegalStateException, IOException {
+		System.out.println("wrfiteController" + boardDto);
+		if (files != null && !files.isEmpty()) {
 			String realPath = servletContext.getRealPath("/resources/img");
 			String today = new SimpleDateFormat("yyMMdd").format(new Date());
 			String saveFolder = realPath + File.separator + today;
@@ -96,17 +96,17 @@ public class BoardRestController {
 				folder.mkdirs();
 			}
 			List<FileInfoDto> fileInfos = new ArrayList<FileInfoDto>();
-				FileInfoDto fileInfoDto = new FileInfoDto();
-				String originalFileName = files.getOriginalFilename();
-				if (!originalFileName.isEmpty()) {
-					String saveFileName = UUID.randomUUID().toString()
-							+ originalFileName.substring(originalFileName.lastIndexOf('.'));
-					fileInfoDto.setSaveFolder(today);
-					fileInfoDto.setOriginFile(originalFileName);
-					fileInfoDto.setSaveFile(saveFileName);
-					files.transferTo(new File(folder, saveFileName));
-				}
-				fileInfos.add(fileInfoDto);
+			FileInfoDto fileInfoDto = new FileInfoDto();
+			String originalFileName = files.getOriginalFilename();
+			if (!originalFileName.isEmpty()) {
+				String saveFileName = UUID.randomUUID().toString()
+						+ originalFileName.substring(originalFileName.lastIndexOf('.'));
+				fileInfoDto.setSaveFolder(today);
+				fileInfoDto.setOriginFile(originalFileName);
+				fileInfoDto.setSaveFile(saveFileName);
+				files.transferTo(new File(folder, saveFileName));
+			}
+			fileInfos.add(fileInfoDto);
 			boardDto.setFileInfos(fileInfos);
 		}
 		try {
