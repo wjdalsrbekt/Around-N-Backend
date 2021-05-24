@@ -144,14 +144,17 @@ public class BoardRestController {
 	}
 
 	@GetMapping("/download")
-	public ResponseEntity<ModelAndView> downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
+	public ResponseEntity<FileInfoDto> downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
 			@RequestParam("sfile") String sfile) {
-		Map<String, Object> fileInfo = new HashMap<String, Object>();
-		fileInfo.put("sfolder", sfolder);
-		fileInfo.put("ofile", ofile);
-		fileInfo.put("sfile", sfile);
-
-		return new ResponseEntity<ModelAndView>(HttpStatus.OK);
+//		Map<String, Object> fileInfo = new HashMap<String, Object>();
+//		fileInfo.put("sfolder", sfolder);
+//		fileInfo.put("ofile", ofile);
+//		fileInfo.put("sfile", sfile);
+		FileInfoDto fileInfoDto=new FileInfoDto();
+		fileInfoDto.setSaveFolder(sfolder);
+		fileInfoDto.setOriginFile(ofile);
+		fileInfoDto.setSaveFile(sfile);
+		return new ResponseEntity<FileInfoDto>(fileInfoDto,HttpStatus.OK);
 
 	}
 }
