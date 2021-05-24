@@ -103,9 +103,9 @@
 		parameterType="com.ssafy.happyhouse.model.FileInfoDto">
 	<![CDATA[
 	update file_info
-	set savefolder = #{savefolder},
-	originfile = #{originfile},
-	savefile = #{savefile}
+	set savefolder = #{file_info.savefolder},
+	originfile = #{file_info.originfile},
+	savefile = #{file_info.savefile}
 	where bnum=#{bnum}
 	]]>
 	</update>

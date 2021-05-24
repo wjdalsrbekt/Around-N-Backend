@@ -43,7 +43,7 @@ public class BoardServiceImpl implements BoardService {
 	public boolean modify(BoardDto boardDto) {
 		int tmp=boardMapper.modify(boardDto);
 		if(boardDto.getFileInfos()!=null)
-			boardMapper.updateFile(boardDto.getBnum());
+			boardMapper.updateFile(boardDto);
 		return tmp == 1;
 	}
 
