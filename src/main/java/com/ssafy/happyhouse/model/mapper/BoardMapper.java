@@ -23,7 +23,7 @@ public interface BoardMapper {
 
 	int delete(int bnum);
 	
-	public void fileRegist(BoardDto boardDto) throws SQLException;
+	public void fileRegist(FileInfoDto fileInfoDto) throws SQLException;
 	
 	public FileInfoDto fileInfoList(int bnum);
 	

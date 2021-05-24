@@ -14,7 +14,7 @@ public interface BoardService {
 
 	boolean create(BoardDto boardDto) throws SQLException;
 
-	boolean modify(BoardDto boardDto);
+	boolean modify(BoardDto boardDto) throws SQLException;
 
 	boolean delete(int bnum);
 	

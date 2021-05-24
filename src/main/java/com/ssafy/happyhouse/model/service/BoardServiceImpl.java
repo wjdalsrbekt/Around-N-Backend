@@ -31,27 +31,34 @@ public class BoardServiceImpl implements BoardService {
 	@Transactional
 	public boolean create(BoardDto boardDto) throws SQLException {
 		System.out.println(boardDto);
-		int tmp=boardMapper.create(boardDto);
+		int tmp = boardMapper.create(boardDto);
 		System.out.println(boardDto);
-		if(boardDto.getFileInfos()!=null)
-			boardMapper.fileRegist(boardDto);
-		return tmp==1;
+		if (boardDto.getFileInfos() != null) {
+			boardDto.getFileInfos().setBnum(boardDto.getBnum());
+			boardMapper.fileRegist(boardDto.getFileInfos());
+		}
+		return tmp == 1;
 //		return boardMapper.create(boardDto) == 1;
 	}
 
 	@Override
-	public boolean modify(BoardDto boardDto) {
-		int tmp=boardMapper.modify(boardDto);
+	public boolean modify(BoardDto boardDto) throws SQLException {
+		int tmp = boardMapper.modify(boardDto);
 		System.out.println(boardDto);
-		FileInfoDto temp=new FileInfoDto();
+		FileInfoDto temp = new FileInfoDto();
 		temp = boardMapper.fileInfoList(boardDto.getBnum());
 		System.out.println(temp);
-		if(boardDto.getFileInfos()!=null) {
+		if (boardDto.getFileInfos() != null) {
 			FileInfoDto temp2 = boardDto.getFileInfos();
-            temp.setOriginFile(temp2.getOriginFile());
-            temp.setSaveFile(temp2.getSaveFile());
-            temp.setSaveFolder(temp2.getSaveFolder());
-            boardMapper.updateFile(temp);
+			if (temp2 != null&&temp!=null) { //기존 사진이 있을 때,
+				temp.setOriginFile(temp2.getOriginFile());
+				temp.setSaveFile(temp2.getSaveFile());
+				temp.setSaveFolder(temp2.getSaveFolder());
+				boardMapper.updateFile(temp);
+			} else { // 기존 사진이 없으면서 사진이 수정될때
+				boardDto.getFileInfos().setBnum(boardDto.getBnum());
+				boardMapper.fileRegist(boardDto.getFileInfos());
+			}
 		}
 //			boardMapper.updateFile(boardMapper.fileInfoList(boardDto.getBnum()));
 		return tmp == 1;
