@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.FileInfoDto;
 import com.ssafy.happyhouse.model.SearchDto;
 
 public interface BoardService {
@@ -16,6 +17,8 @@ public interface BoardService {
 	boolean modify(BoardDto boardDto);
 
 	boolean delete(int bnum);
+	
+	FileInfoDto fileInfoList(int bnum);
 	
 	
 }

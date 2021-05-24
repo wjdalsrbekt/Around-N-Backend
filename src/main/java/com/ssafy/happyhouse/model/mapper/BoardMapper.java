@@ -25,4 +25,6 @@ public interface BoardMapper {
 	
 	public void fileRegist(BoardDto boardDto) throws SQLException;
 	
+	public FileInfoDto fileInfoList(int bnum);
+	
 }

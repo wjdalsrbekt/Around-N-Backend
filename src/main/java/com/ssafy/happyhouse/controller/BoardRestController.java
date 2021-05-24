@@ -143,18 +143,22 @@ public class BoardRestController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 
-	@GetMapping("/download")
-	public ResponseEntity<FileInfoDto> downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
-			@RequestParam("sfile") String sfile) {
-//		Map<String, Object> fileInfo = new HashMap<String, Object>();
-//		fileInfo.put("sfolder", sfolder);
-//		fileInfo.put("ofile", ofile);
-//		fileInfo.put("sfile", sfile);
-		FileInfoDto fileInfoDto=new FileInfoDto();
-		fileInfoDto.setSaveFolder(sfolder);
-		fileInfoDto.setOriginFile(ofile);
-		fileInfoDto.setSaveFile(sfile);
-		return new ResponseEntity<FileInfoDto>(fileInfoDto,HttpStatus.OK);
-
+//	@GetMapping("/download/{bnum}")
+//	public ResponseEntity<FileInfoDto> downloadFile(@RequestParam("sfolder") String sfolder, @RequestParam("ofile") String ofile,
+//			@RequestParam("sfile") String sfile) {
+////		Map<String, Object> fileInfo = new HashMap<String, Object>();
+////		fileInfo.put("sfolder", sfolder);
+////		fileInfo.put("ofile", ofile);
+////		fileInfo.put("sfile", sfile);
+//		FileInfoDto fileInfoDto=new FileInfoDto();
+//		fileInfoDto.setSaveFolder(sfolder);
+//		fileInfoDto.setOriginFile(ofile);
+//		fileInfoDto.setSaveFile(sfile);
+//		return new ResponseEntity<FileInfoDto>(fileInfoDto,HttpStatus.OK);
+//
+//	}
+	@GetMapping("/download/{bnum}")
+	public ResponseEntity<FileInfoDto> downloadFile(@PathVariable("bnum")int bnum) {
+		return new ResponseEntity<FileInfoDto>(boardService.fileInfoList(bnum),HttpStatus.OK);
 	}
 }

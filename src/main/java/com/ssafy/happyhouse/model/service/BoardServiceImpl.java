@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.happyhouse.model.BoardDto;
+import com.ssafy.happyhouse.model.FileInfoDto;
 import com.ssafy.happyhouse.model.SearchDto;
 import com.ssafy.happyhouse.model.mapper.BoardMapper;
 
@@ -48,6 +49,11 @@ public class BoardServiceImpl implements BoardService {
 	public boolean delete(int bnum) {
 		boardMapper.deleteComment(bnum);
 		return boardMapper.delete(bnum) == 1;
+	}
+
+	@Override
+	public FileInfoDto fileInfoList(int bnum) {
+		return boardMapper.fileInfoList(bnum);
 	}
 
 }
