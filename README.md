@@ -3,9 +3,7 @@
 # Around : N (Backend)
 
 ##### Frontend
-<a href="https://lab.ssafy.com/at8in/finalhappyvue">frontend 깃허브 바로가기</a>
-
-<a href="https://lab.ssafy.com/at8in/finalhappyvue">frontend 프로젝트 바로가기!</a>
+<a href="https://github.com/wjdalsrbekt/Around-N-Frontend">frontend 프로젝트 바로가기!</a>
 <a href ="https://www.youtube.com/watch?v=usJ1UsJBG_M">서비스 소개 영상</a>
 
 - Around:N 은 사용자끼리의 커뮤니티들 형성하여 
@@ -115,6 +113,6 @@
 
 ### 오류 및 해결 과정 
 
-<a href ="https://lab.ssafy.com/at8in/finalhappyvue/blob/master/READ%EC%98%A4%EB%A5%98.md">오류 해결 모음</a>
+<a href ="https://github.com/wjdalsrbekt/Around-N-Frontend/blob/master/READ%EC%98%A4%EB%A5%98.md">오류 해결 모음</a>
 
 
