@@ -137,8 +137,6 @@ public class BoardRestController {
 	@PutMapping
 	public ResponseEntity<String> modifyBoard(BoardDto boardDto, @RequestParam(value="upfile", required = false) MultipartFile files) throws IllegalStateException, IOException {
 		logger.debug("modifyBoard - 호출");
-		System.out.println(boardDto);
-		System.out.println(files.toString());
 		logger.debug("" + boardDto);
 		if (files != null && !files.isEmpty()) {
 //			String realPath = servletContext.getRealPath("/resources/img");
