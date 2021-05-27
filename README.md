@@ -2,6 +2,7 @@
 
 # Around : N (Backend)
 
+<a href="https://lab.ssafy.com/at8in/finalhappyvue">frontend 프로젝트 바로가기!</a>
 <a href ="https://www.youtube.com/watch?v=usJ1UsJBG_M">서비스 소개 영상</a>
 
 - Around:N 은 사용자끼리의 커뮤니티들 형성하여 
@@ -40,7 +41,9 @@
 - BackEnd : 
     - 회원 관련 기능 추가
     
-    
+##기술 스택
+---
+![image](/uploads/e718192265e896f69792702ad462d0ba/image.png)
     
 ## 설계
 ***
@@ -73,4 +76,39 @@
 
 
 ### Usecase Diagram
+---
+1.1 Around N 
+![image](/uploads/69e7697d81ddc042d80c37810c687718/image.png)
+1.2 게시물 관리
+![image](/uploads/df9bf3b5386e2b1428a53fc01671008d/image.png)
+1.3 기본 관리
+![image](/uploads/220e1911a8e63afc0672999d1fe81c32/image.png)
+1.4 매물 관리
+![image](/uploads/ca011c9a9015f9cd09a9f080b80968cd/image.png)
+
+### ERD
+---
+![image](/uploads/347f6b03f59809e1fbf58f5745cb63f0/image.png)
+
+### Class Diagram
+---
+![image](/uploads/34cfdd35b76a433607b8b085f0b15c2f/image.png)
+![image](/uploads/0854aa45e853b049a98bfe3dfe44cfc2/image.png)
+
+### Swagger
+![image](/uploads/632230385e04021dd53cb2d2560650fc/image.png)
+![image](/uploads/773637e4cc0f623c239f8c3ca5b1c8df/image.png)
+![image](/uploads/f4326b88765cbdc8baba05a750cc0f9c/image.png)
+![image](/uploads/4aa0c863c6af8004cfc66d1896bc04b3/image.png)
+
+
+## 기대효과
+---
+![image](/uploads/9437577a6196632b47dc4b5b4934b8d2/image.png)
+
+### 오류 및 해결 과정 
+
+<a href ="https://lab.ssafy.com/at8in/finalhappyvue/blob/master/READ%EC%98%A4%EB%A5%98.md">오류 해결 모음</a>
+##### Frontend
+<a href="https://lab.ssafy.com/at8in/finalhappyvue">frontend 깃허브 바로가기</a>
 
