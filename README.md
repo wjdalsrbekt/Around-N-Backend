@@ -1,4 +1,4 @@
-![image](/uploads/a8d787985695429c6113575d477fa0d9/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119803857-ccbe2380-bf1a-11eb-8a8d-f7532ccb07b6.png)
 
 # Around : N (Backend)
 
@@ -43,7 +43,8 @@
     
 ##기술 스택
 ---
-![image](/uploads/e718192265e896f69792702ad462d0ba/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119803959-e19ab700-bf1a-11eb-82f2-fefcd3d2db4d.png)
+
     
 ## 설계
 ***
@@ -57,7 +58,7 @@
 |FR-03|게시판|게시판 권한|사용자는 게시판 글 및 댓글 작성을 하려면 로그인을 해야한다.|HIGH|
 |FR-04|게시판|글 작성|사용자는 글을 작성할 때, 파일업로드 및 글 수정 및 삭제를 할 수 있다.|HIGH|
 |FR-05|게시판|댓글 작성|사용자는 게시판 글에 댓글 작성, 삭제를 할 수 있고, 댓글 게시판은 각 Colum별 정렬 기능 제공을 한다.|HIGH|
-|FR-06|게시판|매물 검색|사용자는 원하는 동, 아파트이름을 골라 원하는 매물을 검색 할 수 있다.|HIGH|
+|FR-06|게시판|매물 검색|사용자는 원하는 동, 아파트이름을 골라 원하느 매물을 검색 할 수 있다.|HIGH|
 |FR-07|매물 검색|날씨확인|시스템은 어플리케이션을 통해 현재의 날씨를 Openweather API에서부터 받아온다.|MIDDLE|
 |FR-08|매물 검색|지도 기능|시스템은 사용자가 원하는 매물에 대한 위치 정보, 주변 편의시설을 카카오 Map API에서부터 받아온다.|HIGH|
 
@@ -78,33 +79,36 @@
 ### Usecase Diagram
 ---
 1.1 Around N 
-![image](/uploads/69e7697d81ddc042d80c37810c687718/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804176-127aec00-bf1b-11eb-87b4-505360d40089.png)
+
 1.2 게시물 관리
-![image](/uploads/df9bf3b5386e2b1428a53fc01671008d/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804428-4a822f00-bf1b-11eb-9adc-6e17a1a55d3d.png)
+
 1.3 기본 관리
-![image](/uploads/220e1911a8e63afc0672999d1fe81c32/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804445-50781000-bf1b-11eb-8326-408174fc37ec.png)
+
 1.4 매물 관리
-![image](/uploads/ca011c9a9015f9cd09a9f080b80968cd/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804475-55d55a80-bf1b-11eb-9838-84bddb752f97.png)
 
 ### ERD
 ---
-![image](/uploads/347f6b03f59809e1fbf58f5745cb63f0/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804493-5c63d200-bf1b-11eb-96f1-6002e850ce23.png)
 
 ### Class Diagram
 ---
-![image](/uploads/34cfdd35b76a433607b8b085f0b15c2f/image.png)
-![image](/uploads/0854aa45e853b049a98bfe3dfe44cfc2/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804520-61c11c80-bf1b-11eb-925f-9e0f48f61a68.png)
+![image](https://user-images.githubusercontent.com/47201943/119804550-684f9400-bf1b-11eb-8b6f-b4ff86066103.png)
 
 ### Swagger
-![image](/uploads/632230385e04021dd53cb2d2560650fc/image.png)
-![image](/uploads/773637e4cc0f623c239f8c3ca5b1c8df/image.png)
-![image](/uploads/f4326b88765cbdc8baba05a750cc0f9c/image.png)
-![image](/uploads/4aa0c863c6af8004cfc66d1896bc04b3/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804573-6e457500-bf1b-11eb-84db-3f1dc25dfd4a.png)
+![image](https://user-images.githubusercontent.com/47201943/119804595-730a2900-bf1b-11eb-96a6-58e4f36205cc.png)
+![image](https://user-images.githubusercontent.com/47201943/119804624-7ac9cd80-bf1b-11eb-9a8b-bf46a11238e6.png)
+![image](https://user-images.githubusercontent.com/47201943/119804638-7ef5eb00-bf1b-11eb-983a-e926cfa0c571.png)
 
 
 ## 기대효과
 ---
-![image](/uploads/9437577a6196632b47dc4b5b4934b8d2/image.png)
+![image](https://user-images.githubusercontent.com/47201943/119804656-84533580-bf1b-11eb-927e-8560f01c144c.png)
 
 ### 오류 및 해결 과정 
 
